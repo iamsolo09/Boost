@@ -1,12 +1,11 @@
-﻿using System.CodeDom;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Runtime.InteropServices;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
+    //This is the default value of thrust   
+    [SerializeField] float rotationThrust = 100f;
+    [SerializeField] float mainThrust = 100f;
+
     Rigidbody rigidBodyRocket;
     AudioSource rocketThrustAudio;
 
@@ -20,30 +19,42 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessInput();
+        ThrustRocketShip();
+        RotateRocketShip();
     }
 
-    private void ProcessInput()
+    private void ThrustRocketShip()
     {
-        if(Input.GetKey(KeyCode.Space)) 
+        if (Input.GetKey(KeyCode.Space))
         {
-            rigidBodyRocket.AddRelativeForce(Vector3.up);
-            if(!rocketThrustAudio.isPlaying)
+            rigidBodyRocket.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+            if (!rocketThrustAudio.isPlaying)
             {
                 rocketThrustAudio.Play();
             }
-        } else
+        }
+        else
         {
             rocketThrustAudio.Stop();
         }
 
+    }
+
+    private void RotateRocketShip()
+    {
+        rigidBodyRocket.freezeRotation = true; //Take manual control of rotation
+
         if(Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.forward);
+            //rotationThisFrame = rcsThrust * Time.deltaTime; 
+            //Here rcsThrust is the thrust of the rocket, and this formula is used to make the game frame independent.
+            transform.Rotate(Vector3.forward * (rotationThrust * Time.deltaTime));
         } else if(Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.forward);
+            transform.Rotate(-Vector3.forward * (rotationThrust * Time.deltaTime));
         }
+
+        rigidBodyRocket.freezeRotation = false; //Resume Physics control
 
         
     }

@@ -134,9 +134,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1569878502, guid: b85dc8ab37eda4f489771393378ebd08, type: 3}
+      propertyPath: m_Mass
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1319920784057735607, guid: b85dc8ab37eda4f489771393378ebd08,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 339a0964f05e09842824bc638b1b31c6, type: 3}
+    - target: {fileID: 1319920784057735607, guid: b85dc8ab37eda4f489771393378ebd08,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319920784057735607, guid: b85dc8ab37eda4f489771393378ebd08,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319920784057735607, guid: b85dc8ab37eda4f489771393378ebd08,
+        type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1340510812257981156, guid: b85dc8ab37eda4f489771393378ebd08,
@@ -369,12 +388,12 @@ PrefabInstance:
     - target: {fileID: 2559568212775376765, guid: 3b8a5e6bae45cdf48a128d2e3e0259eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.79
+      value: 7.9
       objectReference: {fileID: 0}
     - target: {fileID: 2559568212775376765, guid: 3b8a5e6bae45cdf48a128d2e3e0259eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.94
+      value: -53.2
       objectReference: {fileID: 0}
     - target: {fileID: 2559568212775376765, guid: 3b8a5e6bae45cdf48a128d2e3e0259eb,
         type: 3}
